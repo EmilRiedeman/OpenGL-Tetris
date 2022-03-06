@@ -1,4 +1,4 @@
 add_subdirectory(glfw)
+add_subdirectory(glew)
 
-set(LIBS glfw)
-set(LIBS "${LIBS}" CACHE INTERNAL "LIBS")
+set(LIBS glfw libglew_static PARENT_SCOPE)
