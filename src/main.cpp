@@ -1,29 +1,26 @@
+#include <iostream>
+
 #include "GL/glew.h"
 #include <GLFW/glfw3.h>
 
-int main() {
-    GLFWwindow* window;
+#include "graphics/Display.hpp"
 
-    if (!glfwInit())
-        return -1;
-
-    window = glfwCreateWindow(640, 480, "Hello World", nullptr, nullptr);
-    if (!window) {
-        glfwTerminate();
-        return -1;
-    }
-
-    glfwMakeContextCurrent(window);
-    glewInit();
-
-    while (!glfwWindowShouldClose(window)) {
+static void Run() {
+    graphics::Display display(640, 480, "Hello World");
+    if (!display.is_valid()) return;
+    while (!display.should_close()) {
         glClear(GL_COLOR_BUFFER_BIT);
-
-        glfwSwapBuffers(window);
-
+        display.swap_buffers();
         glfwPollEvents();
     }
+}
 
+int main() {
+    if (!glfwInit()) {
+        std::cerr << "Failed to initialize glfw\n";
+        return -1;
+    }
+    Run();
     glfwTerminate();
     return 0;
 }
