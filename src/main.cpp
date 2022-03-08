@@ -8,8 +8,10 @@
 static void Run() {
     graphics::Display display(640, 480, "Hello World");
     if (!display.is_valid()) return;
+    std::cout << "Using version " << glGetString(GL_VERSION) << '\n';
+    graphics::Display::enable_vertical_sync(true);
     while (!display.should_close()) {
-        glClear(GL_COLOR_BUFFER_BIT);
+        graphics::Display::clear();
         display.swap_buffers();
         glfwPollEvents();
     }
