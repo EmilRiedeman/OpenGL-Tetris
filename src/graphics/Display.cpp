@@ -3,7 +3,7 @@
 using graphics::Display;
 
 Display::Display(int width, int height, const char *name, GLFWmonitor *monitor):
-        mWindow(glfwCreateWindow(width, height, name, monitor,  graphics::gFirstWindow)) {
+        mWindow(glfwCreateWindow(width, height, name, monitor, graphics::gFirstWindow)) {
     if (!is_valid()) return;
     glfwMakeContextCurrent(mWindow);
     if (!graphics::gFirstWindow) {
