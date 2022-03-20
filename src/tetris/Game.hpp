@@ -32,12 +32,14 @@ public:
     [[nodiscard]] uint32_t get_time() const { return mTick; }
 private:
     [[nodiscard]] bool check_direction(Vec2 dir) const;
-    [[nodiscard]] static bool in_range(Vec2 pos);
     [[nodiscard]] bool check_if_scheduled(uint32_t startTick, uint32_t interval) const;
+    [[nodiscard]] bool check_row(uint32_t row) const;
     void clear_row(uint32_t row);
     void next_tetromino();
+    [[nodiscard]] static bool in_range(Vec2 pos);
 
-    uint32_t mTick = 1;
+    bool mGameOver = false;
+    uint32_t mTick = 1, mGravityTick = 1;
     Color mData[HEIGHT * WIDTH]{};
     Color *mRows[HEIGHT]{};
     Tetromino mTetromino, mNextTetromino;

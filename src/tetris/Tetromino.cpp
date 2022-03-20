@@ -62,6 +62,7 @@ constexpr void Tetromino::change_rotation() {
             break;
     }
     std::copy(n.begin(), n.end(), mSquares);
+    for (auto& offset : mSquares) offset.y = -offset.y;
 }
 
 constexpr uint32_t Tetromino::get_total_rotations(Tetromino::Type type) {

@@ -6,12 +6,10 @@
 namespace tetris {
 
 enum class Color: uint32_t {
-    NONE,
+    NONE = 0,
     RED,
     GREEN,
     BLUE
-
-
 };
 
 static Color GetRandomColor(std::mt19937& gen) {
