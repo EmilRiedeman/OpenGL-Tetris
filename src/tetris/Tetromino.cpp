@@ -1,6 +1,7 @@
+#include "Tetromino.hpp"
+
 #include <initializer_list>
 #include <algorithm>
-#include "Tetromino.hpp"
 
 using tetris::Tetromino;
 
