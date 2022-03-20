@@ -25,7 +25,7 @@ struct Controller {
 
 class Game {
 public:
-    explicit Game(Controller& controller, std::mt19937& gen);
+    Game(Controller& controller, std::mt19937& gen);
     ~Game() = default;
 
     void tick();
