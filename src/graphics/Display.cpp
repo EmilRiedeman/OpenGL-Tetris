@@ -33,6 +33,6 @@ void Display::enable_vertical_sync(bool v) {
     glfwSwapInterval(v);
 }
 
-void graphics::Display::clear(int mask) {
+void Display::clear(int mask) {
     glClear(mask);
 }

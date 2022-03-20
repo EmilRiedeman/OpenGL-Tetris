@@ -31,10 +31,10 @@ public:
     void tick();
     [[nodiscard]] uint32_t get_time() const { return mTick; }
 private:
-    void clear_row(uint32_t row);
     [[nodiscard]] bool check_direction(Vec2 dir) const;
-    static bool in_range(Vec2 pos);
+    [[nodiscard]] static bool in_range(Vec2 pos);
     [[nodiscard]] bool check_if_scheduled(uint32_t startTick, uint32_t interval) const;
+    void clear_row(uint32_t row);
     void next_tetromino();
 
     uint32_t mTick = 1;
