@@ -39,9 +39,10 @@ private:
     [[nodiscard]] static bool in_range(Vec2 pos);
 
     bool mGameOver = false;
-    uint32_t mTick = 1, mGravityTick = 1;
-    Color mData[HEIGHT * WIDTH]{};
-    Color *mRows[HEIGHT]{};
+    uint32_t mTick = 1;
+    uint32_t mGravityTick = 1;
+    std::array<Color, HEIGHT * WIDTH> mData{};
+    std::array<Color *, HEIGHT> mRows{};
     Tetromino mTetromino, mNextTetromino;
 
     Controller& mController;

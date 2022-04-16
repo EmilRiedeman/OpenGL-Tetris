@@ -32,7 +32,7 @@ void Game::tick() {
 
 Game::Game(Controller& controller, std::mt19937& gen): mTetromino(START_POS, gen), mNextTetromino(START_POS, gen), mController(controller), mRand(gen) {
     for (uint32_t i = 0; i < HEIGHT; ++i) {
-        mRows[i] = mData + i * WIDTH;
+        mRows[i] = mData.data() + i * WIDTH;
     }
 }
 

@@ -5,6 +5,7 @@
 
 #include <cstdint>
 #include <random>
+#include <array>
 
 namespace tetris {
 
@@ -34,6 +35,6 @@ private:
 
     Vec2 mPosition;
     uint32_t mCurrentRotation = 0;
-    Vec2 mSquares[4]{};
+    std::array<Vec2, 4> mSquares;
 };
 }
